@@ -757,6 +757,17 @@ footer p, footer a {
 		overflow: auto;
 		clear: both;
 }
+.fronts img, .backs img {
+    -o-transition: all .5s;
+    -ms-transition: all .5s;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
 .backs img {
 	position: relative; 
   top: 0; 
@@ -771,7 +782,7 @@ footer p, footer a {
     z-index: 2;
 }
 
-.backs {
+.backs, .backs img {
     z-index: 1;
     -webkit-transform: rotateY(-180deg);
     -ms-transform: rotateY(-180deg);
@@ -779,7 +790,7 @@ footer p, footer a {
     transform: rotateY(-180deg);  
 }
 
-.panels:hover .fronts {
+.panels:hover .fronts, .panels:hover .fronts img {
     z-index: 1;
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
@@ -787,7 +798,7 @@ footer p, footer a {
     transform: rotateY(180deg);
 }
 
-.panels:hover .backs {
+.panels:hover .backs, .panels:hover .backs img {
     z-index: 2;   
     -webkit-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
